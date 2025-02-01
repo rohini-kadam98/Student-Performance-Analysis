@@ -121,3 +121,19 @@ SELECT Sleep_Hours, AVG(Exam_Score) AS Avg_Score
 FROM student.StudentPerformanceFactors                           
 GROUP BY Sleep_Hours                               
 ORDER BY Sleep_Hours;                                         
+
+### Share
+![] ()
+
+### Insights
+1.Most students (6108 out of 6607) have internet access, which may influence their performance.                             
+2.The average exam score is 67.24, with scores ranging from 55 to 101.                          
+3.Students with highly educated parents tend to score higher.                              
+4.Studying 10-30 hours per week yields better performance, while 30+ hours doesn’t show significant improvement.                                    
+5.Balanced sleep (6-9 hours) is linked to better academic performance.                                       
+6.High attendance and high motivation lead to higher scores.                                    
+7.Positive peer influence results in higher average scores (81.50), while negative influence lowers them (73-74).                               
+8.Students who receive tutoring perform better than those who don’t.                                         
+9.Participation in extracurricular activities is associated with higher exam scores.                                       
+10.School type impacts student performance, with some schools seeing an increase while others see a decline.                                               
+
