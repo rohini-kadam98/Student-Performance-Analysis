@@ -123,7 +123,7 @@ GROUP BY Sleep_Hours
 ORDER BY Sleep_Hours;                                         
 
 ### Share
-![] ()
+![] (https://github.com/rohini-kadam98/Student-Performance-Analysis/blob/main/student%20performance.pdf)
 
 ### Insights
 1.Most students (6108 out of 6607) have internet access, which may influence their performance.                             
