@@ -136,4 +136,9 @@ ORDER BY Sleep_Hours;
 8.Students who receive tutoring perform better than those who don’t.                                         
 9.Participation in extracurricular activities is associated with higher exam scores.                                       
 10.School type impacts student performance, with some schools seeing an increase while others see a decline.                                               
-
+### Recommendation
+Encourage 10-30 hours of study per week for optimal performance.                         
+Promote 6-9 hours of sleep to improve academic outcomes.                               
+Boost student motivation and attendance through mentorship and rewards.                          
+Provide tutoring programs to enhance learning and scores.                           
+Foster positive peer influence and parental involvement for better results.                                               
