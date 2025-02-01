@@ -77,47 +77,47 @@ SELECT
 FROM student.StudentPerformanceFactors                                       
 GROUP BY Study_Range;                            
 
-#8.Analyze how parental education level impacts student performance.
-SELECT Parental_Education_Level, COUNT(*) AS Student_Count, AVG(Exam_Score) AS Avg_Score
-FROM student.StudentPerformanceFactors
-WHERE Parental_Education_Level IS NOT NULL
-GROUP BY Parental_Education_Level
-ORDER BY Avg_Score DESC;
+#8.Analyze how parental education level impacts student performance                          
+SELECT Parental_Education_Level, COUNT(*) AS Student_Count, AVG(Exam_Score) AS Avg_Score                                  
+FROM student.StudentPerformanceFactors                                       
+WHERE Parental_Education_Level IS NOT NULL                                            
+GROUP BY Parental_Education_Level                                                   
+ORDER BY Avg_Score DESC;                                          
 
 #9. Find the top 5 factors affecting exam scores using a correlation approach (ranking by average scores).
-SELECT 
-    CASE 
-        WHEN Attendance > 90 THEN 'High Attendance'
-        WHEN Attendance BETWEEN 70 AND 90 THEN 'Moderate Attendance'
-        ELSE 'Low Attendance'
-    END AS Attendance_Group,
-    Motivation_Level, Access_to_Resources, Sleep_Hours, Peer_Influence,
-    AVG(Exam_Score) AS Avg_Score
-FROM student.StudentPerformanceFactors
-GROUP BY Attendance_Group, Motivation_Level, Access_to_Resources, Sleep_Hours, Peer_Influence
-ORDER BY Avg_Score DESC
-LIMIT 5;
+SELECT                                                 
+    CASE                                           
+        WHEN Attendance > 90 THEN 'High Attendance'                                 
+        WHEN Attendance BETWEEN 70 AND 90 THEN 'Moderate Attendance'                                    
+        ELSE 'Low Attendance'                               
+    END AS Attendance_Group,                                         
+    Motivation_Level, Access_to_Resources, Sleep_Hours, Peer_Influence,                                    
+    AVG(Exam_Score) AS Avg_Score                                       
+FROM student.StudentPerformanceFactors                                       
+GROUP BY Attendance_Group, Motivation_Level, Access_to_Resources, Sleep_Hours, Peer_Influence                            
+ORDER BY Avg_Score DESC                                        
+LIMIT 5;                                 
 
 #10.Identify the top 5 students who studied the most hours and their corresponding exam scores.
-SELECT Hours_Studied, Exam_Score 
-FROM student.StudentPerformanceFactors 
-ORDER BY Hours_Studied DESC 
-LIMIT 5;
+SELECT Hours_Studied, Exam_Score                                  
+FROM student.StudentPerformanceFactors                               
+ORDER BY Hours_Studied DESC                                  
+LIMIT 5;                                    
 
-#11. Determine whether students who receive tutoring sessions perform better than those who don’t.
-SELECT 
-    CASE 
-        WHEN Tutoring_Sessions = 0 THEN 'No Tutoring' 
-        ELSE 'Received Tutoring' 
-    END AS Tutoring_Status,
-    COUNT(*) AS Student_Count,
-    AVG(Exam_Score) AS Avg_Score
-FROM student.StudentPerformanceFactors
-GROUP BY Tutoring_Status
-ORDER BY Avg_Score DESC;
+#11. Determine whether students who receive tutoring sessions perform better than those who don’t.                              
+SELECT                                
+    CASE                              
+        WHEN Tutoring_Sessions = 0 THEN 'No Tutoring'                       
+        ELSE 'Received Tutoring'                           
+    END AS Tutoring_Status,                             
+    COUNT(*) AS Student_Count,                               
+    AVG(Exam_Score) AS Avg_Score                                          
+FROM student.StudentPerformanceFactors                          
+GROUP BY Tutoring_Status                            
+ORDER BY Avg_Score DESC;                                        
 
-#12. Find the relationship between sleep hours and exam performance.
-SELECT Sleep_Hours, AVG(Exam_Score) AS Avg_Score
-FROM student.StudentPerformanceFactors
-GROUP BY Sleep_Hours
-ORDER BY Sleep_Hours;
+#12. Find the relationship between sleep hours and exam performance.                                
+SELECT Sleep_Hours, AVG(Exam_Score) AS Avg_Score                                  
+FROM student.StudentPerformanceFactors                           
+GROUP BY Sleep_Hours                               
+ORDER BY Sleep_Hours;                                         
