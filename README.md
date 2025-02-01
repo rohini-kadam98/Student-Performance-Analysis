@@ -42,40 +42,40 @@ Exam_Score :Final exam score.
 2.Power BI
 
 ### Analyze
-#1.Find the total number of students in the dataset.
-SELECT COUNT(*) AS Total_Students FROM student.StudentPerformanceFactors;
+#1.Find the total number of students in the dataset.                                                            
+SELECT COUNT(*) AS Total_Students FROM student.StudentPerformanceFactors;                                                
 
-#2.Calculate the average exam score of all students.
-SELECT AVG(Exam_Score) AS Average_Exam_Score FROM student.StudentPerformanceFactors;
+#2.Calculate the average exam score of all students.                                
+SELECT AVG(Exam_Score) AS Average_Exam_Score FROM student.StudentPerformanceFactors;                                  
 
-#3.Retrieve the highest and lowest exam scores.
-SELECT MAX(Exam_Score) AS Highest_Score, MIN(Exam_Score) AS Lowest_Score FROM student.StudentPerformanceFactors;
+#3.Retrieve the highest and lowest exam scores.                              
+SELECT MAX(Exam_Score) AS Highest_Score, MIN(Exam_Score) AS Lowest_Score FROM student.StudentPerformanceFactors;                                  
 
-#4.Find the number of students who have access to the internet.
-SELECT Internet_Access, COUNT(*) AS Count FROM student.StudentPerformanceFactors WHERE Internet_Access = 'Yes';
+#4.Find the number of students who have access to the internet.                                 
+SELECT Internet_Access, COUNT(*) AS Count FROM student.StudentPerformanceFactors WHERE Internet_Access = 'Yes';                                   
 
-#5.Find the average exam score based on school type (Public vs. Private).
-SELECT School_Type, AVG(Exam_Score) AS Avg_Score 
-FROM student.StudentPerformanceFactors 
-GROUP BY School_Type;
+#5.Find the average exam score based on school type (Public vs. Private).                                      
+SELECT School_Type, AVG(Exam_Score) AS Avg_Score                                           
+FROM student.StudentPerformanceFactors                                            
+GROUP BY School_Type;                                                      
 
-#6.Check how many students participate in extracurricular activities and their average exam scores.
-SELECT Extracurricular_Activities, COUNT(*) AS Student_Count, AVG(Exam_Score) AS Avg_Score
-FROM student.StudentPerformanceFactors
-GROUP BY Extracurricular_Activities;
+#6.Check how many students participate in extracurricular activities and their average exam scores.                                           
+SELECT Extracurricular_Activities, COUNT(*) AS Student_Count, AVG(Exam_Score) AS Avg_Score                                     
+FROM student.StudentPerformanceFactors                                          
+GROUP BY Extracurricular_Activities;                                         
 
 #7.Find the correlation between hours studied and exam scores by grouping students into study-hour ranges.
-SELECT 
-    CASE 
-        WHEN Hours_Studied < 10 THEN '0-10 Hours'
-        WHEN Hours_Studied BETWEEN 10 AND 20 THEN '10-20 Hours'
-        WHEN Hours_Studied BETWEEN 21 AND 30 THEN '21-30 Hours'
-        ELSE '30+ Hours' 
-    END AS Study_Range,
-    COUNT(*) AS Student_Count, 
-    AVG(Exam_Score) AS Avg_Score
-FROM student.StudentPerformanceFactors
-GROUP BY Study_Range;
+SELECT                                                
+    CASE                                          
+        WHEN Hours_Studied < 10 THEN '0-10 Hours'                                  
+        WHEN Hours_Studied BETWEEN 10 AND 20 THEN '10-20 Hours'                                 
+        WHEN Hours_Studied BETWEEN 21 AND 30 THEN '21-30 Hours'                            
+        ELSE '30+ Hours'                                       
+    END AS Study_Range,                                                         
+    COUNT(*) AS Student_Count,                                                      
+    AVG(Exam_Score) AS Avg_Score                                 
+FROM student.StudentPerformanceFactors                                       
+GROUP BY Study_Range;                            
 
 #8.Analyze how parental education level impacts student performance.
 SELECT Parental_Education_Level, COUNT(*) AS Student_Count, AVG(Exam_Score) AS Avg_Score
